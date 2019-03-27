@@ -1,0 +1,33 @@
+{
+  "name": "KetabShow",
+  "description": "KetabShow app",
+  "main": "server.js",
+  "authors": [
+    "javad gholampoor"
+  ],
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angulerjs": "1.7.5",
+    "angular-ui-router":"latest",
+    "angular-material": "latest",
+    "material-steppers":"latest",
+    "ng-file-upload":"latest",
+    "angular-translate":"latest",
+    "angular-translate-loader-static-files":"latest",
+    "angular-unsavedChanges":"latest",
+    "angular-translate-storage-cookie":"latest",
+    "angular-translate-storage-local":"latest",
+    "angular-translate-handler-log":"latest",
+    "font-awesome":"5.7.2",
+    "jquery":"3.3.1",
+    "ngstorage":"0.3.11"
+  }
+}

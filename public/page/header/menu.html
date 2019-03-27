@@ -1,0 +1,23 @@
+<md-toolbar class="md-theme-light">
+    <h1 translate="Title Menu" class="md-toolbar-tools">Menu</h1>
+</md-toolbar>
+<md-content layout-padding ng-controller="headerCtrl as vm">
+
+    <md-list flex>
+        <md-list-item ng-click="gotoState('abxwizard')">
+            <div ng-click="gotoState('abxwizard')" class="md-list-item-text">
+                <h3 ng-click="gotoState('abxwizard')" translate="abxwizard Title"></h3>
+            </div>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item ng-click="gotoState('abxmultiple')">
+            <div ng-click="gotoState('abxmultiple')" class="md-list-item-text">
+                <h3 ng-click="gotoState('abxmultiple')" translate="abxmultiple Title"></h3>
+            </div>
+        </md-list-item>
+        <md-divider></md-divider>
+
+        <!-- <md-button ng-click="close()" class="md-primary">
+            Close Sidenav Right
+        </md-button> -->
+</md-content>

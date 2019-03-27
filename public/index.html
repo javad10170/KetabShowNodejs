@@ -1,0 +1,90 @@
+<!doctype html>
+<html ng-app="KetabShow" ng-cloak>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>KetabShow</title>
+	<link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
+	<!-- build:css -->
+	<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+	<link rel="stylesheet" href="css/rtl.css">
+	<!-- endbuild -->
+
+</head>
+
+<body dir="{{(Language.isRtl())?'rtl':'ltr'}}" ng-cloak layout="column" layout-fill>
+
+	<md-toolbar ng-controller="headerCtrl">
+		<div class="md-toolbar-tools">
+			<md-button class="md-icon-button" ng-click="toggleRight()" ng-hide="isOpenRight()">
+				<md-icon md-svg-icon="img/menu.svg"></md-icon>
+			</md-button>
+			<h2>{{$root.pageTitle}}</h2>
+			<span flex></span>
+			<md-button class="md-icon-button">
+				<md-icon md-svg-icon="img/help.svg"></md-icon>
+			</md-button>
+			<md-button ng-show="getCurrentLanguage() != 'fa'" ng-click="changeLanguage('fa')">
+				فارسی
+			</md-button>
+			<md-button ng-show="getCurrentLanguage() != 'en'" ng-click="changeLanguage('en')">
+				English
+			</md-button>
+			<md-button ng-show="getCurrentLanguage() != 'ar'" ng-click="changeLanguage('ar')">
+				العربیه
+			</md-button>
+			<md-button class="md-icon-button">
+				<md-icon md-svg-icon="img/more.svg"></md-icon>
+			</md-button>
+		</div>
+	</md-toolbar>
+
+	<md-sidenav md-component-id="left" class="md-sidenav-left">
+		<div ng-include="'page/header/menu.html'"></div>
+	</md-sidenav>
+
+
+	<md-sidenav md-component-id="right" class="md-sidenav-right">
+		<div ng-include="'page/header/menu.html'"></div>
+	</md-sidenav>
+
+	<div ui-view></div>
+</body>
+
+<!-- build:libjs -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="bower_components/angular-messages/angular-messages.min.js"></script>
+<script src="bower_components/angular-material/angular-material.min.js"></script>
+<script src="bower_components/material-steppers/dist/material-steppers.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+<script src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+<script src="bower_components/angular-unsavedChanges/dist/unsavedChanges.min.js"></script>
+<script src="bower_components/angular-translate/angular-translate.min.js"></script>
+<script src="bower_components/angular-translate-storage-local/angular-translate-storage-local.min.js"></script>
+<script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js"></script>
+<script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+<script src="bower_components/angular-translate-handler-log/angular-translate-handler-log.min.js"></script>
+<script src="bower_components/ngstorage/ngStorage.min.js"></script>
+
+<script src="js/angular-froala.js"></script>
+<!-- endbuild -->
+
+
+<!-- build:corejs -->
+<script type="text/javascript" src="js/core.js"></script>
+<script type="text/javascript" src="page/header/headerCtrl.js"></script>
+<script type="text/javascript" src="page/home/homeCtrl.js"></script>
+<!-- endbuild -->
+<script type="text/javascript">
+	angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname +
+		'" />'));
+</script>
+
+</html>
