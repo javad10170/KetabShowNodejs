@@ -1,4 +1,4 @@
-KetabShow.controller('homeCtrl', function ($rootScope, $scope, $state, $translate) {
+KetabShow.controller('homeCtrl', function ($rootScope, $scope, $state, $translate, $http) {
 
     $rootScope.title = $translate('home Title');
 
@@ -9,5 +9,9 @@ KetabShow.controller('homeCtrl', function ($rootScope, $scope, $state, $translat
         $state.go(x);
     };
 
-    
+    $http.get("/api/search").then(function (data) {
+        var x = data;
+    });
+
+
 });

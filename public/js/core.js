@@ -1,15 +1,12 @@
 var KetabShow = angular.module('KetabShow', [
     'ngMaterial',
-    'mdSteppers',
     'ui.router',
-    'ngFileUpload',
     'pascalprecht.translate',
-    'unsavedChanges',
     'ngCookies',
     'ngStorage'
 ]);
 
-KetabShow.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $translateProvider, $mdThemingProvider, unsavedWarningsConfigProvider ) {
+KetabShow.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $translateProvider, $mdThemingProvider ) {
     var neonRedMap = $mdThemingProvider.extendPalette('teal', {
         '500': '#607d8b',
     });
@@ -44,7 +41,6 @@ KetabShow.config(function ($stateProvider, $urlRouterProvider, $locationProvider
         });
 
     $locationProvider.html5Mode(true);
-    unsavedWarningsConfigProvider.useTranslateService = false;
 });
 
 KetabShow.run(function ($rootScope, Language) {
