@@ -17,7 +17,7 @@ module.exports = function (app) {
 	app.get('/api/search', function (req, res) {
   
 	  const options = {
-		mirror: 'http://libgen.is',
+		mirror: 'http://185.39.10.101/',
 		query: 'lord of the ring',
 		count: 30
 	  };
