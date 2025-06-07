@@ -29,7 +29,6 @@ function timeConnection(item,callback){
 }
 
 module.exports = function(callback){
-  var n = 0;
   async.map(baseUrls, timeConnection, (err, results) => {
     if (err)
       return console.error(err);
